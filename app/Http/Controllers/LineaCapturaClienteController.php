@@ -261,17 +261,30 @@ class LineaCapturaClienteController extends Controller
         ];
 
         $wsdl = 'http://10.1.78.2/fut/LineaCaptura_WS/GeneralLC/lineaCapturaGenWs_secureServer.php?wsdl';
-        $cliente = new \SoapClient($wsdl, [
+
+
+
+        $cliente = new \nusoap_client($wsdl, 'wsdl');
+$cliente->soap_defencoding = 'UTF-8';
+$cliente->decode_utf8 = FALSE;
+
+// Calls
+
+
+
+
+       /* $cliente = new \SoapClient($wsdl, [
             /*'login' => 'usuario',
-            'password' => 'contraseña',*/
+            'password' => 'contraseña',
             'encoding' => 'UTF-8',
             'trace' => true
-        ]);
+        ]);*/
         try {
-            $resultado = $cliente->solicitaLineaCapturaGen($pregunta);
+            //$resultado = $cliente->solicitaLineaCapturaGen($pregunta);
+            $resultado = $cliente->call('solicitaLineaCapturaGen', $pregunta);
 
             // Finalmente muestras la respuesta 
-            dd($cliente->__getLastResponse());
+            dd($cliente);
         } catch (\Throwable $th) {
             echo '<pre>';
             echo $th;
