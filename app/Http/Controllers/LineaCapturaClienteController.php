@@ -224,36 +224,85 @@ class LineaCapturaClienteController extends Controller
 
             ]
         ];*/
-        $pregunta = [
+        /*$pregunta = [
             "usuario" => "ovica",
             "password" => "829daf62494d2c85d5d55bc9c167ba42",
             "intImpuesto" => 81,
-            "referencia" => "01010201",
-            "fechaLimPP" => "2020-01-02",
-            "totalV" => 5884.41,
-            "concepto" => "VM",
+            "referencia" => "0101047",
+            "fechaLimPP" => "2020-06-30",
+            "totalV" => 686,
+            "numPeriodos" => 2,
+            "concepto" => "03",
             "usuarioGen" => "jmcastaneda",
             "ip" => "10.1.14.46",
             "caja" => 0,
             "arrayDatos" => [
                 [
-                    "ctapredial" => "011109030004",
+                    "ctapredial" => "051035150005",
                     "bonifica" => "0",
                     "embargo" => "0",
                     "id_pago" => "01010201",
                     "id_transf_elect" => "0",
                     "importe2" => "0",
-                    "multa" => "408",
-                    "otros" => "3249.9",
+                    "cobranza" => "288.6",
+                    "multa" => "26",
+                    "otros" => "56.82",
                     "perayo" => "0",
-                    "perfin" => "201406",
-                    "perini" => "201406",
-                    "perven" => "6",
-                    "recargo1" => "2226.51",
-                    "recargo2" => "398.68",
+                    "perfin" => "200101",
+                    "perini" => "200101",
+                    "perven" => "0",
+                    "recargo1" => "46.04",
+                    "recargo2" => "0",
                     "subsidio" => "0",
-                    "impuesto" => "2698.36",
-                    "total" => "5884.41",
+                    "impuesto" => "26",
+                    "total" => "128.86",
+              
+                ],
+                [
+                    "ctapredial" => "051035150005",
+                    "bonifica" => "0",
+                    "embargo" => "0",
+                    "id_pago" => "01010201",
+                    "id_transf_elect" => "0",
+                    "importe2" => "0",
+                    "cobranza" => "288.6",
+                    "multa" => "0",
+                    "otros" => "71",
+                    "perayo" => "0",
+                    "perfin" => "202002",
+                    "perini" => "202002",
+                    "perven" => "0",
+                    "recargo1" => "3.05",
+                    "recargo2" => "3.05",
+                    "subsidio" => "0",
+                    "impuesto" => "71",
+                    "total" => "71",
+              
+                ]
+
+            ]
+        ]; */
+
+        $pregunta = [
+            "usuario" => "ovica",
+            "password" => "829daf62494d2c85d5d55bc9c167ba42",
+            "intImpuesto" => 80,
+            "referencia" => "0101047",
+            "fechaLimPP" => "2020-05-31",
+            "totalV" => 216,
+            "numPeriodos" => 1,
+            "concepto" => "03",
+            "usuarioGen" => "jmcastaneda",
+            //"ip" => "10.1.14.46",
+            //"caja" => 0,
+            "arrayDatos" => [
+                [
+                    "ctapredial" => "00406311004",
+                    "perfin" => "200101",
+                    "perini" => "200101",
+                    "impuesto" => "26",
+                    "total" => "128.86",
+                    "id_pago" => "01010101",
               
                 ]
 
@@ -289,9 +338,9 @@ $cliente->decode_utf8 = FALSE;
             echo '<pre>';
             echo $th;
             print_r($cliente->__getLastRequest());
-            print_r($cliente->__getLastRequestHeaders());
+            //print_r($cliente->__getLastRequestHeaders());
             print_r($cliente->__getLastResponse());
-            print_r($cliente->__getLastResponseHeaders());
+            //print_r($cliente->__getLastResponseHeaders());
             echo '</pre>';
         }
     }
