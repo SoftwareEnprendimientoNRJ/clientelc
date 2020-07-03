@@ -224,7 +224,9 @@ class LineaCapturaClienteController extends Controller
 
             ]
         ];*/
-        /*$pregunta = [
+
+
+      $pregunta = [
             "usuario" => "ovica",
             "password" => "829daf62494d2c85d5d55bc9c167ba42",
             "intImpuesto" => 81,
@@ -234,14 +236,14 @@ class LineaCapturaClienteController extends Controller
             "numPeriodos" => 2,
             "concepto" => "03",
             "usuarioGen" => "jmcastaneda",
-            "ip" => "10.1.14.46",
-            "caja" => 0,
+            //"ip" => "10.1.14.46",
+            //"caja" => 0,
             "arrayDatos" => [
                 [
                     "ctapredial" => "051035150005",
                     "bonifica" => "0",
                     "embargo" => "0",
-                    "id_pago" => "01010201",
+                    "id_pago" => "01018532",
                     "id_transf_elect" => "0",
                     "importe2" => "0",
                     "cobranza" => "288.6",
@@ -262,7 +264,7 @@ class LineaCapturaClienteController extends Controller
                     "ctapredial" => "051035150005",
                     "bonifica" => "0",
                     "embargo" => "0",
-                    "id_pago" => "01010201",
+                    "id_pago" => "01018532",
                     "id_transf_elect" => "0",
                     "importe2" => "0",
                     "cobranza" => "288.6",
@@ -281,16 +283,16 @@ class LineaCapturaClienteController extends Controller
                 ]
 
             ]
-        ]; */
+        ];
 
-        $pregunta = [
+       /* $pregunta = [
             "usuario" => "ovica",
             "password" => "829daf62494d2c85d5d55bc9c167ba42",
-            "intImpuesto" => 80,
+            "intImpuesto" => "81",
             "referencia" => "0101047",
             "fechaLimPP" => "2020-05-31",
-            "totalV" => 216,
-            "numPeriodos" => 1,
+            "totalV" => "216",
+            "numPeriodos" => "1",
             "concepto" => "03",
             "usuarioGen" => "jmcastaneda",
             //"ip" => "10.1.14.46",
@@ -298,16 +300,16 @@ class LineaCapturaClienteController extends Controller
             "arrayDatos" => [
                 [
                     "ctapredial" => "00406311004",
-                    "perfin" => "200101",
-                    "perini" => "200101",
-                    "impuesto" => "26",
-                    "total" => "128.86",
-                    "id_pago" => "01010101",
+                    "perfin" => "202003",
+                    "perini" => "202003",
+                    "impuesto" => "216.23",
+                    "total" => "216",
+                    "id_pago" => "01010201",
               
                 ]
 
             ]
-        ];
+        ]; */
 
         $wsdl = 'http://10.1.78.2/fut/LineaCaptura_WS/GeneralLC/lineaCapturaGenWs_secureServer.php?wsdl';
 
@@ -330,7 +332,7 @@ $cliente->decode_utf8 = FALSE;
         ]);*/
         try {
             //$resultado = $cliente->solicitaLineaCapturaGen($pregunta);
-            $resultado = $cliente->call('solicitaLineaCapturaGen', $pregunta);
+            $resultado = $cliente->call('solicitaLineaCapturaGen', array($pregunta));
 
             // Finalmente muestras la respuesta 
             dd($cliente);
