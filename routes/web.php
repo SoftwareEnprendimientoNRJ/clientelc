@@ -17,3 +17,4 @@ $router->get('/', function () use ($router) {
     return $router->app->version();
 });
 $router->get('lc', 'LineaCapturaClienteController@showLC');
+$router->get('liquidacion', 'ClienteKioskosController@showLiquidacion');
