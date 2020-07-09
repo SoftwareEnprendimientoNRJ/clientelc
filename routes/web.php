@@ -18,3 +18,4 @@ $router->get('/', function () use ($router) {
 });
 $router->get('lc', 'LineaCapturaClienteController@showLC');
 $router->get('liquidacion', 'ClienteKioskosController@showLiquidacion');
+$router->get('lotes', 'ClienteLotesController@showLotes');

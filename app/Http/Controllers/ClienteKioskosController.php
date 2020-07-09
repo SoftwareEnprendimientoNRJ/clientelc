@@ -43,7 +43,7 @@ $cliente->decode_utf8 = TRUE;
         } catch (\Throwable $th) {
             echo '<pre>';
             echo $th;
-            print_r($cliente->__getLastRequest());
+            //print_r($cliente->__getLastRequest());
             //print_r($cliente->__getLastRequestHeaders());
             print_r($cliente->__getLastResponse());
             //print_r($cliente->__getLastResponseHeaders());
